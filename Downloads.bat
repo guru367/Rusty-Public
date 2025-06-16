@@ -1,9 +1,0 @@
-@echo off
-echo [+] Downloading RustDesk Portable EXE (v1.4.0)...
-powershell -Command "Invoke-WebRequest -Uri 'https://github.com/rustdesk/rustdesk/releases/download/1.4.0/rustdesk-1.4.0-x86_64.exe' -OutFile 'rustdesk.exe'"
-
-echo [+] Launching RustDesk...
-start rustdesk.exe
-
-echo [+] Done. Waiting for output...
-timeout /t 10
