@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Download & Run Downloads.bat
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/guru367/Rusty-Public/00a55efa6447d43b571415ef341dd0524641fc9f/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/guru367/Rusty-Public/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
       - name: Keep GitHub VM Alive
