@@ -1,0 +1,23 @@
+name: Windows - RustDesk RDP
+
+on:
+  workflow_dispatch:
+
+jobs:
+  remote-access:
+    name: RustDesk RDP Session
+    runs-on: windows-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Download and Run RustDesk Setup
+        run: |
+          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/guru367/Rusty-Public/42cb0dff4efa2e4579c0c3139b65f46d4066df8e/Downloads.bat" -OutFile "Downloads.bat"
+          cmd /c Downloads.bat
+
+      - name: Keep Runner Alive
+        shell: pwsh
+        run: |
+          while ($true) {
+            Start-Sleep -Seconds 60
+          }
