@@ -1,22 +1,22 @@
-name: Windows - RustDesk RDP
+name: Programmingwithkumaresan
 
 on:
   workflow_dispatch:
 
 jobs:
-  connect-via-rustdesk:
+  build:
+    name: Start Building...
     runs-on: windows-latest
-    timeout-minutes: 360
-
+    timeout-minutes: 9999
+    
     steps:
-      - name: Download & Run Downloads.bat
+      - name: Downloading & Installing Essentials
         run: |
-          Invoke-WebRequest -Uri "https://raw.githubusercontent.com/guru367/Rusty-Public/main/Downloads.bat" -OutFile "Downloads.bat"
+          Invoke-WebRequest -Uri "https://gitlab.com/chamod12/lm_win-10_github_rdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
           cmd /c Downloads.bat
 
-      - name: Keep GitHub VM Alive
-        shell: pwsh
-        run: |
-          while ($true) {
-            Start-Sleep -Seconds 60
-          }
+      - name: Connect to LiteManager
+        run: cmd /c show.bat
+
+      - name: Time Counter
+        run: cmd /c loop.bat
